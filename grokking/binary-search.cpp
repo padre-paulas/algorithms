@@ -19,6 +19,11 @@ int main() {
 }
 
 int biSearch(int arr[], int arrSize, int lookingFor) {
+  
+  if (lookingFor > arr[arrSize - 1] || lookingFor < arr[0]) {
+    return -1;
+  }
+
   int right = arrSize - 1;
   int left = 0;
   int mid = 0;
