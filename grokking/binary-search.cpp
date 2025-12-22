@@ -6,7 +6,7 @@ int biSearch(int arr[], int arrSize, int lookingFor);
 int main() {
 
   int arr[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-  int lookingFor = 20;
+  int lookingFor = 12;
   int arrSize = sizeof(arr) / sizeof(arr[0]);
 
   int i = biSearch(arr, arrSize, lookingFor);
@@ -18,8 +18,12 @@ int main() {
   return 0;
 }
 
-int biSearch(int arr[], int arrSize, int lookingFor) {
+bool isIntArrSorted(int arr[], int arrSize) {
   
+}
+
+int biSearch(int arr[], int arrSize, int lookingFor) {
+
   if (lookingFor > arr[arrSize - 1] || lookingFor < arr[0]) {
     return -1;
   }
