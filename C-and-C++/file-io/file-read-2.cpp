@@ -3,10 +3,13 @@
 using namespace std;
 
 void readFile2();
+void readFile2Alternative();
+
 
 int main() {
 
-  readFile2();
+  // readFile2();
+  readFile2Alternative();
 
   return 0;
 }
@@ -33,6 +36,23 @@ void readFile2() {
     }
     i++;
   }
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      cout << arr[i][j] << endl;
+    }
+  }
+}
+
+void readFile2Alternative() {
+  ifstream inFile("file-2.txt");
+
+  double arr[3][3];
+  int i = 0;
+
+  while (inFile >> arr[i][0] >> arr[i][1] >> arr[i][2]) {
+    i++;
+  }
+
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       cout << arr[i][j] << endl;
