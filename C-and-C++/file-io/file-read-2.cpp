@@ -4,12 +4,13 @@ using namespace std;
 
 void readFile2();
 void readFile2Alternative();
-
+void readFile3();
 
 int main() {
 
   // readFile2();
-  readFile2Alternative();
+  // readFile2Alternative();
+  readFile3();
 
   return 0;
 }
@@ -23,6 +24,7 @@ void readFile() {
     if (inFile.eof()) break;
     inFile >> x1 >> x2 >> x3;
   }
+  inFile.close();
 }
 
 void readFile2() {
@@ -41,6 +43,7 @@ void readFile2() {
       cout << arr[i][j] << endl;
     }
   }
+  inFile.close();
 }
 
 void readFile2Alternative() {
@@ -58,4 +61,19 @@ void readFile2Alternative() {
       cout << arr[i][j] << endl;
     }
   }
+  inFile.close();
+}
+
+void readFile3() {
+
+  ifstream inFile("file-3.txt");
+  string line;
+
+  // inFile >> line;
+  getline(inFile, line);
+
+  cout << line << endl;
+
+
+  inFile.close();
 }
