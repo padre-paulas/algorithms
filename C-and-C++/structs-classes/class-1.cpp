@@ -1,26 +1,41 @@
 #include <iostream> 
 #include <string>
+#define клас class
+#define публічне public
+#define рядок string
+#define ціле int
+#define власне private
+#define пусте void
+#define повертає return
+#define головна main
+#define свивід cout
+#define кінецьр endl
+
 using namespace std;
 
-class BankAccount {
-  public:
-    string name;
-    int balance;
+клас БанківськийАкаунт {
+  публічне:
+    рядок імя;
+    ціле баланс;
 
-  private:
-    string lastName;
+  власне:
+    рядок прізвище;
 };
 
-int main() {
+пусте перша();
 
+ціле головна() {
 
-  return 0;
+  перша();
+
+  повертає 0;
 }
 
-void first() {
+пусте перша() {
 
- BankAccount newAccount;
+  БанківськийАкаунт акаунт1;
 
- newAccount.name;
+  акаунт1.імя = "Віктор";
 
+  свивід << акаунт1.імя << кінецьр;
 }
