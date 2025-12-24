@@ -24,10 +24,12 @@ void test() {
 
 int main() {
 
+  Number *five = new Number(5);
+
   test();
 
   Number Eight(8);
 
-
+  delete five;
   return 0;
 }
