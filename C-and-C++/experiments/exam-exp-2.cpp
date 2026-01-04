@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 void q2();
@@ -8,7 +9,7 @@ void q4();
 void q5();
 void q6();
 char q11(char str[]);
-// void q12();
+void q12();
 // void q13();
 
 int main() {
@@ -19,10 +20,12 @@ int main() {
 
   // cout << c << endl;
 
-  char string[26] = " well.  hello or whatever";
-  char result = q11(string);
+  // char string[26] = " well.  hello or whatever";
+  // char result = q11(string);
 
-  cout << result << endl;
+  // cout << result << endl;
+
+  q12();
 
   return 0;
 }
@@ -76,4 +79,29 @@ char q11(char str[]) {
     }
   }
   return dynStr.back();
+}
+
+void q12() {
+  int n = 3;
+  double arr[n][n];
+  ifstream inFile("AA.txt");
+  ofstream outFile("CC.txt");
+  if (!inFile.is_open()) return;
+  if (!outFile.is_open()) return;
+
+  int i = 0;
+  while (i < n) {
+    inFile >> arr[i][0] >> arr[i][1] >> arr[i][2];
+    i++;
+  }
+
+  double sum = 0;
+  for (i = 1; i < n; i++) {
+    for (int j = 0; j < i; j++) {
+      if (arr[i][j] < 0) {
+        sum += arr[i][j];
+      }
+    }
+  }
+  outFile << sum;
 }
