@@ -4,8 +4,8 @@ using namespace std;
 void q2();
 void q3();
 void q4();
-// void q5();
-// void q6();
+void q5();
+void q6();
 
 int main() {
 
@@ -15,7 +15,7 @@ int main() {
 
   // cout << c << endl;
 
-  q4();
+  q6();
 
   return 0;
 }
@@ -42,4 +42,17 @@ void q4() {
   for (i = 0, d = 0; i < 10; i++, d = !d);
 
   cout << i << " " << d << endl;
+}
+
+void q5() {
+
+}
+
+void q6() {
+  double p = (1 - 1 / pow(2, 2));
+  int n = 3;
+  for (; n < 10000; n++) {
+    p *= (1 - 1 / pow(n, 2));
+  }
+  cout << p << endl;
 }
