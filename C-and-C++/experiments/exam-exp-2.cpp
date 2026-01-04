@@ -10,7 +10,13 @@ void q5();
 void q6();
 char q11(char str[]);
 void q12();
-// void q13();
+void q13();
+
+struct MonthlyInfo {
+  char month;
+  float plan;
+  float complete;
+};
 
 int main() {
 
@@ -25,7 +31,7 @@ int main() {
 
   // cout << result << endl;
 
-  q12();
+  q13();
 
   return 0;
 }
@@ -104,4 +110,36 @@ void q12() {
     }
   }
   outFile << sum;
+}
+
+void q13() {
+  vector<MonthlyInfo> infoArray;
+  int dataAmount = 20;
+  MonthlyInfo MI;
+  for (int i = 0; i < 3; i++) {
+    // for (int j = 0; j < 3; j++) {
+      cout << "Enter letter for the month: ";
+      cin >> MI.month;
+
+      cout << "Enter a number for plan: ";
+      cin >> MI.plan;
+
+      cout << "Enter number from 0 to 1 for the completeness of the plan: ";
+      cin >> MI.complete;
+      infoArray.push_back(MI);
+    // }
+  }
+  MonthlyInfo temp;
+  for (int i = 0; i < dataAmount; i++) {
+    for (int j = 0; j < dataAmount; j++) {
+      if (infoArray[j].complete < infoArray[j + 1].complete) {
+        temp = infoArray[j];
+        infoArray[j] = infoArray[j + 1];
+        infoArray[j + 1] = temp;
+      }
+    }
+  }
+  for (int i = 0; i < dataAmount; i++) {
+    cout << "Month: " << infoArray[i].month << " Plan: " << infoArray[i].plan << " Complete: " << infoArray[i].complete << endl;
+  }
 }
