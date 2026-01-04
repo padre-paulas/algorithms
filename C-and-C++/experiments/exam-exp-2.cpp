@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 void q2();
@@ -6,6 +7,9 @@ void q3();
 void q4();
 void q5();
 void q6();
+char q11(char str[]);
+// void q12();
+// void q13();
 
 int main() {
 
@@ -15,7 +19,10 @@ int main() {
 
   // cout << c << endl;
 
-  q6();
+  char string[26] = " well.  hello or whatever";
+  char result = q11(string);
+
+  cout << result << endl;
 
   return 0;
 }
@@ -55,4 +62,18 @@ void q6() {
     p *= (1 - 1 / pow(n, 2));
   }
   cout << p << endl;
+}
+
+char q11(char str[]) {
+  int wordNumber = 0;
+  string dynStr;
+  for (int i = 0; str[i] != '\0'; i++) {
+    cout << i << endl;
+    if (str[i] != ' ') {
+      if (str[i - 1] == ' ') wordNumber++;
+      if (wordNumber == 3) break;
+      dynStr.push_back(str[i]);
+    }
+  }
+  return dynStr.back();
 }
