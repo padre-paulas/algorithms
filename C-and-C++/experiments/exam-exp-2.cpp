@@ -117,7 +117,6 @@ void q13() {
   int dataAmount = 20;
   MonthlyInfo MI;
   for (int i = 0; i < 3; i++) {
-    // for (int j = 0; j < 3; j++) {
       cout << "Enter letter for the month: ";
       cin >> MI.month;
 
@@ -127,7 +126,6 @@ void q13() {
       cout << "Enter number from 0 to 1 for the completeness of the plan: ";
       cin >> MI.complete;
       infoArray.push_back(MI);
-    // }
   }
   MonthlyInfo temp;
   for (int i = 0; i < dataAmount; i++) {
