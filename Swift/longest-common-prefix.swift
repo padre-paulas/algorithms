@@ -1,6 +1,6 @@
 class Solution {
     func longestCommonPrefix(_ strs: [String]) -> String {
-        let matrix = strs.map { Array($0)}
+        let matrix = strs.map { Array($0) }
         var comPref: String = "";
         var lastCommon: Bool = false;
 
