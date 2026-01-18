@@ -20,9 +20,6 @@ int main() {
   } else {
     std::cout << "Array isn't sorted!\n";
   }
-
-  
-
   return 0;
 }
 

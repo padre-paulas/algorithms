@@ -29,15 +29,12 @@ int main() {
   long int y = 6;
   unsigned short *ptr1 = &x;
   long *prt2 = &y;
-  // if (ptr1 < prt2); 
 
   enum city {
     street1 = 5,
     street2,
     street3,
   };
-
-  // city::street1;
 
   int arr[12] = {1, 3, 5, 4, -7, -99, 43, 4, 677, 90, 12, 78};
   int length = sizeof(arr) / sizeof(int);
