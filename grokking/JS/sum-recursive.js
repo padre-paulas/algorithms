@@ -1,4 +1,4 @@
-const arr = [1, 3, 5, 77, 4];
+export const arr = [1, 3, 5, 77, 4];
 let sum = 0;
 
 function addArrElements(arr, count) {
