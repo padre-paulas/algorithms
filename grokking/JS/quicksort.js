@@ -30,14 +30,8 @@ function quicksort2(arr) {
   const pivotIndex = Math.floor(Math.random() * arr.length)
   const pivot = arr[pivotIndex];
   
-  for (let i = 0; i < pivotIndex; i++) {
-    if (arr[i] < pivot) {
-      less.push(arr[i])
-    } else {
-      greater.push(arr[i])
-    }
-  }
-  for (let i = pivotIndex + 1; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
+    if (i === pivotIndex) continue;
     if (arr[i] < pivot) {
       less.push(arr[i])
     } else {
