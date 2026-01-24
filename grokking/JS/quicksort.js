@@ -1,11 +1,11 @@
-const arr = Array.from( { length: 50 }, () => Math.floor(Math.random() * 100))
+const arr = Array.from( { length: 5 }, () => Math.floor(Math.random() * 100))
 
 function quicksort(arr) {  
   if (arr.length < 2) return arr;
 
   let less = [];
   let greater = [];
-  let pivot = arr[0];
+  const pivot = arr[0];
   
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] < pivot) {
@@ -22,3 +22,29 @@ function quicksort(arr) {
 console.log(arr)
 console.log(quicksort(arr));
 
+function quicksort2(arr) {  
+  if (arr.length < 2) return arr;
+
+  let less = [];
+  let greater = [];
+  const pivotIndex = Math.floor(Math.random() * arr.length)
+  const pivot = arr[pivotIndex];
+  
+  for (let i = 0; i < pivotIndex; i++) {
+    if (arr[i] < pivot) {
+      less.push(arr[i])
+    } else {
+      greater.push(arr[i])
+    }
+  }
+  for (let i = pivotIndex + 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      less.push(arr[i])
+    } else {
+      greater.push(arr[i])
+    }
+  }
+  return [...quicksort2(less), pivot, ...quicksort2(greater)];
+}
+
+console.log(quicksort2(arr));
