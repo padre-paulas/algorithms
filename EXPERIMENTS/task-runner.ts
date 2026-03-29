@@ -63,7 +63,8 @@ const demo = () => {
 
   tm.addTask(task1);
   tm.addTask(task2);
-  let nextTask: Task = tm.getNextTask();
+  let nextTask: Task | null = tm.getNextTask();
+  if (!nextTask) return;
   console.log(nextTask);
   tm.updateStatus(nextTask.id, TaskStatus.completed);
   console.log(tm.getNextTask());
